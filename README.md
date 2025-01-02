@@ -1,3 +1,1 @@
-to run the server: 
-cd arena
-python manage.py runserver
+to run the server, run "cd arena" and then "python manage.py runserver"
