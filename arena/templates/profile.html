@@ -1,0 +1,41 @@
+{%load static%}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <link rel="stylesheet" href="{% static 'profile_style.css' %}">
+
+    <header class="profile-header">
+        <div class="header-content">
+            <h1>WELCOME, {{user.username}}</h1>
+        </div>
+    </header><br>
+
+    <h2>SESSIONS BOOKED</h2>
+
+    <div class="container">
+        {% for session in sessions %}
+        <div class="session-box">
+            <h3>{{ session.sport_type }}</h3>
+            <p><strong>Time:</strong> {{ session.time|date:"D, M d Y H:i" }}</p>
+            <p><strong>Location:</strong> {{ session.location }}</p>
+            <p><strong>Game Size:</strong> {{ session.game_size }}</p>
+            <p><strong>Slots Taken:</strong> {{ session.slots_taken }}</p>
+            <p class="price">£{{ session.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+</body>
+</html>

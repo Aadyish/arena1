@@ -1,0 +1,112 @@
+
+
+
+h1{
+    color: greenyellow;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+h5{
+    color: red;
+    font-family: sans-serif;
+}
+
+.container{
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Oswald", serif;
+    
+    
+
+}
+
+.popup{
+    width: 800px;
+    height: 900px;
+    border-radius: 6px;
+    background: #FFA50B;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 30px 30px;
+
+}
+
+.popup form p {
+    margin: 5px 0; /* Reduce spacing above and below each label */
+    font-size: 14px; /* Optional: Adjust the font size */
+}
+
+.popup form input[type="text"], 
+.popup form select.styled-select {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 90%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Oswald", serif;
+}
+
+.popup form input[type="date"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 90%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Oswald", serif;
+}
+
+/* Styling for submit button */
+.popup form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup form select{
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 90%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Oswald", serif;
+}
+
+.popup form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: red;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: darkred;
+}
+
+body {
+    font-family: fantasy !important;
+}

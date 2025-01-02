@@ -1,0 +1,230 @@
+body, html {
+    height: 100%; /* Ensure the body and html take up the full height */
+    margin: 0; /* Remove default margin */
+}
+
+body{
+    background-color: white;
+}
+
+h1{
+    color: black;
+    font-family: "Oswald", serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    font-size: 60px;
+}
+
+h3{
+    color: red;
+    font-family: "Oswald", serif;
+}
+
+
+.container{
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: "Oswald", serif;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.container {
+    background: black;
+    display: flex;
+    flex-direction: column; /* Stack children (popup) vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    height: 100vh; /* Ensure it takes the full height of the viewport */
+    font-family: "Oswald", serif;
+}
+
+
+.popup{
+    width: 800px;
+    height: 900px;
+    border-radius: 100px;
+    background:#EFF0EF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 30px 30px;
+    
+}
+
+.popup form p {
+    margin: 5px 0; /* Reduce spacing above and below each label */
+    font-size: 20px; /* Optional: Adjust the font size */
+}
+
+.popup form input[type="text"], 
+.popup form select.styled-select {
+    margin-bottom: 10px;
+    background: black;
+    color: #EFF0EF;
+    text-align: center;
+    padding: 10px;
+    width: 90%;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Oswald", serif;
+}
+
+.popup form input[type="date"] {
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+    width: 90%;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Oswald", serif;
+    background-color: black;
+    color: #EFF0EF;
+}
+
+/* Styling for submit button */
+.popup form input[type="submit"] {
+    background-color: black;
+    font-family: "Oswald", serif;
+    text-transform: uppercase;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100px;
+    width: 100px;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+/*
+.popup form select{
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Oswald", serif;
+    background-color: black;
+    color: #EFF0EF;
+}
+    */
+
+.popup form input[type="submit"]:hover {
+    background-color: black;
+    color: #EFF0EF;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Align buttons horizontally */
+    gap: 10px; /* Add spacing between the buttons */
+    margin-top: 10px; /* Optional: Add space above the buttons */
+}
+
+input[type="submit"], .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #EFF0EF;
+    color: black;
+}
+
+.btn {
+    background-color: black;
+    color: #EFF0EF;
+    text-decoration: none;
+    border-radius: 100px;
+    width: 60px;
+}
+
+.btn:hover {
+    background-color: #EFF0EF;
+    color: black;
+}
+
+.popup form input[type="submit"]:hover {
+    background-color: #EFF0EF;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Align buttons horizontally */
+    gap: 10px; /* Add spacing between the buttons */
+    margin-top: 10px; /* Optional: Add space above the buttons */
+}
+
+input[type="submit"], .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #FFA50B;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 100px;
+    width: 60px;
+}
+
+.btn:hover {
+    background-color: #FFA50B;
+}

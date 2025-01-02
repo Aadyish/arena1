@@ -1,0 +1,100 @@
+body {
+    font-family: "Oswald", serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #FFD230;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 36px;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.session-box {
+    width: 250px;
+    background-color: #FFD230;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.session-box h3 {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.session-box p {
+    font-size: 14px;
+    color: black;
+    margin: 5px 0;
+}
+
+.session-box .price {
+    font-weight: bold;
+    color: black;
+}
+
+.session-box .price {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.session-box p, .session-box .price {
+    font-family: "Oswald", serif;
+}
+
+.session-box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: black;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-top: 10px;
+    align-self: center;
+}
+
+.session-box .btn:hover {
+    background-color: #FFD230;
+    color: black;
+}
+
+.profile-header {
+    background-color: #FFD230;  
+    padding: 20px;            
+    text-align: center;        
+    margin-bottom: 20px;       
+}
+
+.profile-header .header-content h1 {
+    font-size: 32px;           
+    color: black;            
+    margin: 0;                  
+    font-family: "Oswald", serif; 
+}

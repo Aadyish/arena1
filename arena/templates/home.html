@@ -1,0 +1,115 @@
+{%load static%}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+    <header>
+        <div class="header-left">
+            <h1>ARENA</h1>
+        </div>
+
+        <div class="header-right">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </header><br>
+
+    
+    <!--
+    {% if user.is_authenticated %}
+    <div style="text-align: right; margin: 10px;">
+        <a href="logout" class="btn btn-primary">logout</a><br>
+        <br><a href="profile" class="btn btn-primary">profile</a>
+    </div>
+    {% else %}
+    <div style="text-align: right; margin: 10px;">
+        <a href="login" class="btn btn-primary">login</a>
+    </div>
+    {% endif %}
+    -->
+
+    <form method="POST" style="margin-bottom: 20px; text-align: center;">
+        {% csrf_token %}
+        <div style="display: flex; justify-content: center; gap: 10px; align-items: center;">
+            <!-- Date Filter -->
+            <div>
+                <label for="filter_mindate">Start date:</label>
+                <input type="date" id="mindate" name="mindate" value="{{ request.GET.date }}">
+            </div>
+
+            <div>
+                <label for="filter_maxdate">End date:</label>
+                <!-- <input type="date" id="filter_mindate" name="filter_mindate" value="{{ request.GET.date }}">-->
+                <input type="date" id="maxdate" name='maxdate'>
+            </div>
+    
+            <!-- Location Filter -->
+            <div>
+                <label for="filter_location">Location:  </label>
+                <select name="location" id="location">
+                    <option value="no location">No location</option>
+                    <option value="central london">Central london</option>
+                    <option value="north london">North london</option>
+                    <option value="east london">East london</option>
+                    <option value="south london">South london</option>
+                    <option value="west london">West london</option>
+                </select>
+            </div>
+    
+            <!-- Sport Type Filter -->
+            <div>
+                <label for="filter_sport">Sport:</label>
+                <select name="fav_sport" id="fav_sport">
+                    <option value="no sport">No sport</option>
+                    <option value="football">football</option>
+                    <option value="basketball">basketball</option>
+                    <option value="badminton">badminton</option>
+                    <option value="tennis">tennis</option>
+                </select>
+            </div>
+    
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </div>
+    </form>
+
+    <h2>Available Sessions</h2>
+
+    <div class="container">
+        {% for session in sessions %}
+                <div class="session-box">
+                <h3>{{ session.sport_type }}</h3>
+                <p><strong>Time:</strong> {{ session.time|date:"D, M d Y H:i" }}</p>
+                <p><strong>Location:</strong> {{ session.location }}</p>
+                <p><strong>Game Size:</strong> {{ session.game_size }}</p>
+                <p><strong>Slots Taken:</strong> {{ session.slots_taken }}</p>
+                <p class="price">£{{ session.price }}</p>
+                {% if user.is_authenticated %}
+                <div>
+                <br><a href="{% url 'create_checkout_session' session.id %}" class="btn btn-primary">book session</a>
+                </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

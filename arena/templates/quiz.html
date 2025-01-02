@@ -1,0 +1,101 @@
+{%load static%}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arena quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/css/multi-select-tag.css">
+<link rel="stylesheet" href="{% static 'quizstyle.css' %}">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="popup">
+            <h1>WELCOME TO ARENA</h1>
+
+            <form method="POST" action="">
+                {% csrf_token %}
+                <p>FULL NAME</p>
+                <input type="text" name="fullname">
+
+
+                <p>DATE OF BIRTH</p>
+                <input type="date" 
+                id="dob" 
+                name='dob'
+                min="2015-01-01T00:00" 
+                max="2025-12-31T23:59" 
+                step="1">
+               
+               
+                <p>PHONE NUMBER</p>
+                <input type="text" name="phone_number">
+
+                <p>GENDER</p>
+                <select name="gender" id="gender">
+                    <option value="Prefer_not_to_say">Prefer not to say</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                </select>
+
+                <p>LOCATION</p>
+                <select name="location" id="location">
+                    <option value="no location">No location</option>
+                    <option value="central london">Central london</option>
+                    <option value="north london">North london</option>
+                    <option value="east london">East london</option>
+                    <option value="south london">South london</option>
+                    <option value="west london">West london</option>
+                </select>
+                
+                <p>FAVOURITE SPORTS</p>
+                <select name="fav_sport" id="fav_sport" multiple>
+                    <option value="tennis">Tennis</option>
+                    <option value="football">Football</option>
+                    <option value="badminton">Badminton</option>
+                    <option value="basketball">Basketball</option><br>
+                </select><br>
+                
+                <!--<br><input type="submit"><br>-->
+                <br><div class="button-container">
+                    <input type="submit" value="Submit">
+                    <a href="{% url 'home' %}" class="btn">SKIP</a>
+                </div>
+                
+
+                {% for message in messages %}
+                <h3>{{message}}</h3>
+                {% endfor %}
+            </form>
+
+            <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.1.0/dist/js/multi-select-tag.js"></script>
+            <script>
+                new MultiSelectTag('fav_sport', {
+                    rounded: true,    // default true
+                    shadow: true,      // default false
+                    placeholder: 'Select',  // default Search...
+                    tagColor: {
+                        textColor: '#08080A',
+                        borderColor: '#EFF0EF',
+                        bgColor: '#EFF0EF',
+                    },
+                    onChange: function(values) {
+                        console.log(values)
+                    }
+                })
+            </script>
+
+            <!--<a href="{% url 'home' %}" class="btn">Skip</a>-->
+
+        </div>
+    </div>
+
+</body>
+</html>

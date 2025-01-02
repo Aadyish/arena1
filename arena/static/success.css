@@ -1,0 +1,39 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: white;  /* White background */
+    color: black;  /* Black text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full viewport height */
+    margin: 0;
+    text-align: center;
+    flex-direction: column; /* Stack the content vertically */
+}
+
+/* Style the h1 tag */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Style the button */
+.btn {
+    background-color: black;  /* Black button background */
+    color: white;  /* White text color */
+    padding: 10px 20px;
+    text-decoration: none;  /* Remove underline */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn:hover {
+    background-color: white;  
+    color: black;  
+}
+
+.home-link {
+    margin-top: 0px;
+}
